@@ -219,6 +219,10 @@
             margin-top: 20vh;
         }
 
+#alan , #tech, #x {
+    cursor: pointer;
+}
+
         .account {
             display: flex;
             gap: 25px;
@@ -230,6 +234,7 @@
             border-radius: 25px;
             width: 250px;
             margin: 25px;
+            height: 350px;
 
             .account_picture {
                 width: 140px;
@@ -239,10 +244,6 @@
 
             }
 
-            .account:hover {
-                transform: scale(1.09);
-                transition: 0.5s ease ;
-            }
         }
 
         .intro {
@@ -274,23 +275,25 @@
 
     <main id="main-content">
         <h1>Welcome to <span style="color: #08c453;">Me</span>Tube!</h1>
-        <p class="intro">The first personal page inspired from the YT architecture. Let's get started. Select an account
+        <p class="intro">The first personal page inspired from the YT architecture. Let's get started. In some way or
+            the other, everyone has more than one themselves. Each of mine made an account. Select
+            an account
             to discover a new
             <span class="bold">Persona</span>
         </p>
 
         <div class="account_section">
-            <div class="account">
+            <div id="alan"  class="account">
                 <img src="" alt="Alan profile" class="account_picture">
                 <p>Alan</p>
             </div>
 
-            <div class="account">
+            <div id="tech" class="account">
                 <img src="" alt="The tech dreamer profile" class="account_picture">
                 <p>The Tech Dreamer</p>
             </div>
 
-            <div class="account">
+            <div id="x" class="account">
                 <img src="" alt="X-identity profile" class="account_picture">
                 <p>X-identity</p>
             </div>
@@ -313,7 +316,21 @@
                 }, 400);
             }, 3200);
         });
+
+        const alan = document.querySelector("#alan");
+        const tech = document.querySelector("#tech");
+        const x = document.querySelector("#x");
+
+        alan.addEventListener ('click', () => {
+            window.location.href = "alan.html"
+        });
+        tech.addEventListener ('click', () => {
+            window.location.href = "tech.html"
+        });
+        x.addEventListener ('click', () => {
+            window.location.href = "x.html"
+        });
     </script>
 </body>
 
-</html>
+</h

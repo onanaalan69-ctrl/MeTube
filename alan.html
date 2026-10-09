@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Iceland&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
     <title>MeTube</title>
 
     <style>
@@ -23,12 +25,40 @@
             text-align: center;
             word-spacing: 1.5px;
             padding: 40px;
+            overflow-x: hidden;
         }
 
         .bold {
             font-weight: 800;
             color: #08c453;
         }
+
+        #track {
+            position: fixed;
+            width: 100%;
+            height: 3px;
+            top: 20vh;
+            z-index: 9999;
+            pointer-events: none;
+            transition: 0.1s ease-out;
+            background-color: gray;
+            max-width: 200px;
+            visibility: hidden;
+
+            #track_bar {
+                width: 100%;
+                max-width: 800px;
+                height: 100%;
+                background-color: rgb(72, 72, 243);
+                border-radius: 5px;
+            }
+
+        }
+
+        #track.appear {
+            visibility: visible;
+        }
+
 
         .hero {
             display: flex;
@@ -51,6 +81,7 @@
                 width: 100vw;
                 height: 200px;
                 border-radius: 0;
+                transition: 0.3s ease-out;
             }
 
             .hero_sticker {
@@ -81,11 +112,36 @@
                 object-fit: cover;
             }
         }
+
+        #footer {
+            background-color: #08c4538d;
+            position: absolute;
+            margin-top: 25vh;
+            width: 100%;
+            padding: 20px;
+
+
+            p {
+                text-align: left;
+                margin-top: 2vh;
+            }
+
+            a {
+                border: solid gray;
+                width: fit-content;
+                display: block;
+                display: flex;
+                gap: 12px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <main>
+        <div id="track">
+            <div id="track_bar"></div>
+        </div>
         <div class="hero">
             <div class="hero_text">
                 <h1>Hello, I'm Alan!</h1>
@@ -95,7 +151,7 @@
 
                 <div class="hero_sticker">
                     <img src="assets/instagram.png" alt="Instagram hero image" class="sticker"><a
-                        href="https://www.instagram.com/betterme_alan_x7/">betterme_alan_x7</a>
+                        href="https://www.instagram.com/betterme_alan_x7/">DM me on Instagram</a>
                     <div><img src="assets/slack.png" alt="Slack hero image" class="sticker"> Slack username: Alan_X
                     </div>
                     <div><img src="assets/mail.png" alt="Gmail hero image" class="sticker"> onanaalan7@gmail.com</div>
@@ -130,7 +186,7 @@
                     this quite
                     unfamiliar area. The class was not unfamiliar because of a different learning curriculum, but
                     because of a <span class="bold">completely new atmosphere</span>.
-                     Though I stepped into form 3, I felt this childish, and open atmosphere we can feel
+                    Though I stepped into form 3, I felt this childish, and open atmosphere we can feel
                     when entering form 1.
                 </p>
 
@@ -155,9 +211,11 @@
                 <p>
                     For once in my life my extrovert side, which was previously barely visible, became 100% of me.
                     Since that 2nd week of
-                    school, <span class="bold">I never felt myself timide in anyway, and I did not want anyone to fill like me in my first
-                    secondary
-                    school years</span>. When I am in a new place, I try talking to everyone, to make them feel as comfortable
+                    school, <span class="bold">I never felt myself timide in anyway, and I did not want anyone to fill
+                        like me in my first
+                        secondary
+                        school years</span>. When I am in a new place, I try talking to everyone, to make them feel as
+                    comfortable
                     as my F3 was for me.
                 </p>
 
@@ -170,15 +228,16 @@
                 <p>
                     Some would say I was with the right people, others would say that my social skills just increased (I
                     was reading books
-                    to become more social during that period by the way), but <span class="bold">what matters the most is that I've grown
-                    in that same spirit</span> and I have 
+                    to become more social during that period by the way), but <span class="bold">what matters the most
+                        is that I've grown
+                        in that same spirit</span> and I have
                     many more friends I can count on in my surrounding.
                 </p>
             </div>
 
             <div class="alan_textBox">
                 <p>
-                   I will leave you with the images I took thanks to this wonderful spirit I continue carrying with me.
+                    I will leave you with the images I took thanks to this wonderful spirit I continue carrying with me.
 
                 </p>
 
@@ -189,14 +248,16 @@
                 <img src="" alt="Alan attending the Hack Club Slack conversation">
 
                 <p>
-                    Here, I was in a huddle (call) with some members of the <span class="bold">Hack Club</span> for a lockin session, and a
+                    Here, I was in a huddle (call) with some members of the <span class="bold">Hack Club</span> for a
+                    lockin session, and a
                     debate. How exciting it was!
                 </p>
             </div>
 
             <div class="alan_textBox">
                 <p>
-                    Here Is a picture of me and some friends I made at the <span class="bold">Open Dreams Summer Academy</span>.
+                    Here Is a picture of me and some friends I made at the <span class="bold">Open Dreams Summer
+                        Academy</span>.
                 </p>
 
                 <img src="" alt="Alan at the Open Dreams Summer Academy">
@@ -213,9 +274,22 @@
 
         </section>
 
+
+
     </main>
 
+    <footer id="footer">
+        Made with care by Alan<br>
+
+        <p>
+            Yaounde, Cameroon 2026
+        </p>
+        <a href="index.html"><span class="material-symbols-outlined">
+                home
+            </span> Back to Home</a>
+    </footer>
     <script>
+        const fill_container = document.getElementById('track');
         const trigger = document.getElementById('trigger');
         const hero_image = document.getElementById('hero_image');
 
@@ -224,14 +298,29 @@
             entries.forEach(entry => {
                 if (!entry.isIntersecting) {
                     hero_image.classList.add('banner_mode');
+                    fill_container.classList.add('appear');
                 }
                 else {
                     hero_image.classList.remove('banner_mode');
+                    fill_container.classList.remove('appear');
                 }
             });
         });
 
         observer.observe(trigger);
+
+        const fill = document.getElementById('track_bar');
+        window.addEventListener('scroll', () => {
+            const totalTrack = document.documentElement.scrollHeight - window.innerHeight;
+
+            if (totalTrack <= 0) return;
+
+            const fill_ratio = (window.scrollY / totalTrack) * 100;
+
+            fill.style.width = `${fill_ratio}%`
+
+
+        });
     </script>
 </body>
 
