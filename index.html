@@ -25,7 +25,7 @@
             background-color: black;
             color: white;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         #splash-screen {
@@ -219,13 +219,15 @@
             margin-top: 20vh;
         }
 
-#alan , #tech, #x {
-    cursor: pointer;
-}
+        #alan,
+        #tech,
+        #x {
+            cursor: pointer;
+        }
 
         .account {
             display: flex;
-            gap: 25px;
+            gap: 55px;
             flex-direction: column;
             font-size: large;
             font-weight: 500;
@@ -234,13 +236,14 @@
             border-radius: 25px;
             width: 250px;
             margin: 25px;
-            height: 350px;
+            height: 300px;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
 
             .account_picture {
                 width: 140px;
                 height: 140px;
                 margin: 0 auto;
-                border-radius: 50px;
+                border-radius: 100px;
 
             }
 
@@ -283,8 +286,8 @@
         </p>
 
         <div class="account_section">
-            <div id="alan"  class="account">
-                <img src="" alt="Alan profile" class="account_picture">
+            <div id="alan" class="account">
+                <img src="assets/alan_profile.png" alt="Alan profile" class="account_picture">
                 <p>Alan</p>
             </div>
 
@@ -321,13 +324,13 @@
         const tech = document.querySelector("#tech");
         const x = document.querySelector("#x");
 
-        alan.addEventListener ('click', () => {
+        alan.addEventListener('click', () => {
             window.location.href = "alan.html"
         });
-        tech.addEventListener ('click', () => {
+        tech.addEventListener('click', () => {
             window.location.href = "tech.html"
         });
-        x.addEventListener ('click', () => {
+        x.addEventListener('click', () => {
             window.location.href = "x.html"
         });
     </script>
