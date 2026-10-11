@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+
+    <title>MeTube</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bgimage {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-image: url('assets/pcb.png');
+        }
+
+        body {
+
+
+            font-family: 'Iceland',
+                sans-serif;
+            background-color: rgb(51, 51, 182);
+            padding: 20px;
+            margin-top: 20vh;
+            text-align: center;
+            overflow-x: hidden;
+            font-size: 21px;
+
+            img {
+                border: 3px solid orange;
+                border-radius: 25px;
+            }
+        }
+
+        .bold {
+            font-weight: 800;
+            color: orange;
+        }
+
+
+        #track {
+            position: fixed;
+            width: 100%;
+            height: 3px;
+            top: 20vh;
+            z-index: 9999;
+            pointer-events: none;
+            transition: 0.1s ease-out;
+            background-color: blue;
+            max-width: 200px;
+            visibility: hidden;
+
+            #track_bar {
+                width: 100%;
+                max-width: 800px;
+                height: 100%;
+                background-color: orange;
+                border-radius: 5px;
+            }
+
+        }
+
+        #track.visible {
+            visibility: visible;
+        }
+
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 45px;
+            color: white;
+
+            a {
+                text-decoration: underline;
+                color: white;
+
+            }
+
+            #hero_image2 {
+                width: 750px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 25px;
+                background-color: orange;
+            }
+
+            #hero_image2.banner_mode {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 200px;
+                border-radius: 0;
+                transition: 0.3s ease-out;
+            }
+
+            .hero_sticker {
+                margin-top: 15px;
+            }
+
+            .sticker {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+        }
+
+        #tech_body {
+            margin-top: 25vh;
+            color: white;
+
+            .tech_textBox {
+                margin-top: 10vh;
+                display: flex;
+                gap: 10px;
+            }
+
+            img {
+                border-radius: 25px;
+                border: solid 5px orange;
+                width: 400px;
+                height: 200px;
+                background-color: orange;
+                object-fit: cover;
+            }
+        }
+
+        #footer {
+            background-color: rgba(255, 166, 0, 0.608);
+            position: absolute;
+            margin-top: 25vh;
+            width: 100%;
+            padding: 20px;
+            left: 0;
+
+
+            p {
+                text-align: left;
+                margin-top: 2vh;
+            }
+
+            a {
+                border: solid gray;
+                width: fit-content;
+                display: block;
+                display: flex;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bgimage"></div>
+    <div id="track">
+        <div id="track_bar"></div>
+    </div>
+    <div class="hero">
+        <div class="hero_text">
+            <h1>Hello World!</h1>
+            <p>Just as Ghost in Call of Duty left his family to fight for his nation, I had this call of <span
+                    class="bold">building</span> since I was 9. Here, the persona gives you a brief walthrough of the
+                stages of this call in his life!</p>
+
+            <div class="hero_sticker">
+                <img src="assets/github.png" alt="Github image" class="sticker"><a
+                    href="https://www.github.com/onanaalan69-ctrl/">Visit my Github</a>
+                <div><img src="assets/slack.png" alt="Slack hero image" class="sticker"> Slack username: Alan_X
+                </div>
+                <div><img src="assets/mail.png" alt="Gmail hero image" class="sticker"> onanaalan7@gmail.com</div>
+            </div>
+
+        </div>
+
+        <img src="" alt="Alan hero image" id="hero_image2">
+        <div id="trigger"></div>
+    </div>
+
+    <main>
+        <section id="tech_body">
+            <div class="tech_textBox">
+                <p>All started when I was 9, and I discovered coding, through my brother's CSci. manual. After an
+                    introduction to coding, I was fascinated by the fact that we could input some lines of writing in a
+                    computer, and peoduce wonderful UI's (as my first deiscovery was with WebDesign).</p>
+
+                <img src="" alt="Alan's first interactions">
+            </div>
+
+            <section id="tech_body">
+                <div class="tech_textBox">
+                    <img src="" alt="Alan's first interactions">
+
+                    <p>
+                        This interest lead me to deep researches in the other uses of this code. As you can
+                        guess, there were so amy possibilities, from building a simple website, to having a full
+                        automatic system. I was like a kid infront of a candy (though I was literally a kid). My
+                        imagination started fusling, as I was imagining the different things I could build with coding.
+                    </p>
+                </div>
+
+                <div class="tech_textBox">
+                    <p>
+                        Time past on, and my dreams too. I grew up with a mind full of ideas, but never really built
+                        something. All I did was to break defectous devices at home to reverse engineer them. This main
+                        disadvantage of not having a hands-on experience slowed my progress in building anything.
+                    </p>
+
+                    <img src="" alt="Alan's first interactions">
+                </div>
+            </section>
+    </main>
+    <footer id="footer">
+        Made with care by Alan<br>
+
+        <p>
+            Yaounde, Cameroon 2026
+        </p>
+        <a href="index.html"><span class="material-symbols-outlined">
+                home
+            </span> Back to Home</a>
+    </footer>
+    <script>
+        const trigger2 = document.getElementById('tigger2');
+        const hero_image2 = document.getElementById('hero_image2');
+        const track2 = document.getElementById('track');
+
+        const observer2 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    hero_image2.classList.add('banner_mode');
+                    track2.classList.add('visible');
+                }
+                else {
+                    hero_image2.classList.remove('banner_mode');
+                    track2.classList.remove('visible');
+                }
+            });
+        });
+
+        observer2.observe(trigger2);
+
+        const fill2 = document.getElementById('track_bar');
+        window.addEventListener('scroll', () => {
+            const totalTrack2 = document.documentElement.scrollHeight - innerHeight;
+
+            if (totalTrack2 <= 0) return;
+
+            const fill_ratio2 = (window.scrollY / totalTrack2) * 100;
+
+            fill2.style.width = `${fill_ratio}%`;
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
